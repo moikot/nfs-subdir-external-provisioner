@@ -31,8 +31,6 @@ jobs:
                TAGS="${TAGS},${DOCKER_IMAGE}:${MAJOR}"
                TAGS="${TAGS},${DOCKER_IMAGE}:${MAJOR}.${MINOR}"
                TAGS="${TAGS},${DOCKER_IMAGE}:${MAJOR}.${MINOR}.${PATCH}"
-
-               echo ::set-output name=push_readme::true
             else
                TAGS="${DOCKER_IMAGE}:${VERSION}"
             fi
