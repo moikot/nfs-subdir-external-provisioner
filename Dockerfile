@@ -11,7 +11,7 @@ WORKDIR ${APP_FOLDER}
 
 # Compile independent executable using go wrapper from xx:golang
 ARG TARGETPLATFORM
-RUN CGO_ENABLED=0 go build -a -o /bin/main ./cmd/nfs-subdir-external-provisioner
+RUN CGO_ENABLED=0 go build -a -ldflags '-extldflags "-static"' -o /bin/main ./cmd/nfs-subdir-external-provisioner
 
 FROM --platform=$TARGETPLATFORM alpine:3.12
 
