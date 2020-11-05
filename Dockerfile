@@ -18,5 +18,4 @@ FROM --platform=$TARGETPLATFORM alpine:3.12
 RUN apk update --no-cache && apk add ca-certificates
 COPY --from=build-env /bin/main /app/main
 
-EXPOSE 8080
 ENTRYPOINT ["/app/main"]
